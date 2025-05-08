@@ -62,7 +62,6 @@ public class sage {
             int count = 0;
 
             for(Map.Entry<String, Integer> entry : treeMap.entrySet()) {
-                String name = entry.getKey();
                 int score = entry.getValue();
 
                 if(score >= average) {
@@ -70,10 +69,7 @@ public class sage {
                 }
             }
 
-            System.out.println("\t\tNumber of students with above average score: " + count);
-
-            //System.out.println("Averae score: " + treeMap.values().stream().mapToInt(Integer::intValue).average().orElse(0.0));
-            //System.out.println("Max score: " + Collections.max(treeMap.values()));
+            System.out.println("Number of students with above average score: " + count);
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
         }
