@@ -58,6 +58,22 @@ public class sage {
                     System.out.println("\t\t\t" + name);
                 }
             }
+
+            int count = 0;
+
+            for(Map.Entry<String, Integer> entry : treeMap.entrySet()) {
+                String name = entry.getKey();
+                int score = entry.getValue();
+
+                if(score >= average) {
+                    count++;
+                }
+            }
+
+            System.out.println("\t\tNumber of students with above average score: " + count);
+
+            //System.out.println("Averae score: " + treeMap.values().stream().mapToInt(Integer::intValue).average().orElse(0.0));
+            //System.out.println("Max score: " + Collections.max(treeMap.values()));
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
         }
